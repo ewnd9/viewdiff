@@ -1,4 +1,4 @@
-const ipc = require("ipc");
+const { ipcRenderer } = require("electron");
 const React = require("react");
 const ReactDOM = require("react-dom");
 const { extname } = require("path");
@@ -78,7 +78,7 @@ function Main(props) {
   );
 }
 
-ipc.on("diff", function (raw) {
+ipcRenderer.on("diff", function (event, raw) {
   var diff = JSON.parse(raw);
 
   ReactDOM.render(<Main diff={diff} />, document.getElementById("content"));

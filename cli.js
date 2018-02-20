@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var spawn = require("child_process").spawn;
-var electron = require("electron-prebuilt");
+var electron = require("electron");
 var path = require("path");
 var parse = require("parse-diff");
 var stdin = require("get-stdin")();
